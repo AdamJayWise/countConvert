@@ -16,7 +16,7 @@
             }
 
             .mainEquation {
-                width : 100%;
+                width : 754px;
                 display : flex;
                 flex-direction: row;
                 align-items : center;
@@ -25,12 +25,12 @@
 
             .term {
                 position : relative;
-                box-shadow: 3px 3px 6px 3px gray;
-                padding : 5px;
-                font-size : 18px;
+                box-shadow: 3px 3px 6px 1px gray;
+                padding : 3px;
+                font-size : 16px;
                 font-weight : bold;
                 display : inline-block;
-                margin : 7px;
+                margin : 5px;
             }
 
             .operator {
@@ -55,8 +55,9 @@
 
             #messages {
                 display : block;
-                width : 100%;
+                width : 754px;
                 text-align : center;
+                padding : 5px 0 0 0;
 
             }
 
@@ -73,7 +74,7 @@
 
     <div class = "mainEquation">
         <div class = "term"> 
-            Counts, ADU
+            Counts
             <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "countInput" param = "counts"></div> 
         </div> 
 
@@ -89,14 +90,14 @@
         <div class = "operator">&times;</div>
         
         <div class = "term">
-            Quantum Efficiency, e<sup>-</sup>/photon
+            Quantum Efficiency, e<sup>-</sup>/Photon
             <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "qeInput" param = "qe"></div> 
         </div> 
         
         <div class = "operator">&times;</div>
         
         <div class = "term">
-            Conversion Gain, ADU/e<sup>-</sup>
+            Gain, Count/e<sup>-</sup>
             <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "gainInput" param = "gain"></div> 
         </div> 
 
@@ -105,7 +106,7 @@
         <div class = "operator">+</div>
         
             <div class = "term">
-                ADC Offset, ADU
+                Offset, Counts
                 <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "offsetInput" param = "offset"></div> 
             </div> 
 
@@ -115,6 +116,10 @@
 
     <div id = "messages">
         Enter values to calculate
+    </div>
+
+    <div id = "configPanel">
+        <select id = "familySelect">
     </div>
 
 </body>
