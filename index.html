@@ -26,23 +26,27 @@
             .term {
                 position : relative;
                 box-shadow: 3px 3px 6px 1px gray;
-                padding : 3px;
+                padding : 2px;
                 font-size : 16px;
-                font-weight : bold;
-                display : inline-block;
-                margin : 5px;
-            }
-
-            .operator {
-                font-size : 30px;
                 font-weight : bold;
                 display : inline-block;
                 margin : 3px;
             }
 
+            .operator {
+                font-size : 25px;
+                font-weight : bold;
+                display : inline-block;
+                margin : 2px;
+            }
+
             .eqInputDiv {
                 width : 100%;
                 
+            }
+
+            .inputLabel {
+                display : inline;
             }
 
             .eqInput {
@@ -58,8 +62,72 @@
                 width : 754px;
                 text-align : center;
                 padding : 5px 0 0 0;
-
             }
+
+            #countDiv {
+                width : 80px;
+            }
+
+            #photonDiv {
+                width : 80px;
+            }
+
+            #gainDiv {
+                width : 130px;
+            }
+
+            #offsetDiv {
+                width : 100px;
+            }
+
+            #emGainDiv {
+                width : 80px;
+            }
+
+            #qeDiv {
+                width : 120px;
+            }
+
+            .tipButton {
+                display : inline-block;
+                position : relative;
+                top : -1px;
+                left : 4px;
+                background-color : rgb(48, 58, 136);
+                border-radius : 12.5px;
+                border : 1px solid white;
+                width : 18px;
+                height : 18px;
+                text-align : center;
+                line-height : 18px;
+                color : white;
+                font-size : 17px;
+                margin : -5px 0 0 0;
+                box-shadow : 1px 1px gray;
+            }
+
+            .messageDiv {
+                position : absolute;
+                width : 300px;
+                top : 100px;
+                background-color : white;
+                border : 3px solid rgb(48, 58, 136);
+                padding : 10px;
+                font-size : 19px;
+                font-weight : bold;
+            }
+
+            .screen {
+                opacity : 0.5;
+                background-color : white;
+                width : 100%;
+                height : 100%;
+                position : absolute;
+                top : 0px;
+                left : 0px;
+            }
+
+
 
         </style>
 
@@ -73,40 +141,47 @@
     </div>
 
     <div class = "mainEquation">
-        <div class = "term"> 
-            Counts
-            <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "countInput" param = "counts"></div> 
+        <div class = "term" id = "countDiv"> 
+            <div class = "inputLabel">Counts</div>
+            <div class = "eqInputDiv" ><input type = "text" class = "eqInput" id = "countInput" param = "counts"></div> 
         </div> 
 
         <div class = "operator">=</div>
 
         <div class = "operator">(</div>
         
-        <div class = "term">
-            Photons
-            <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "photonInput" param = "photons"></div> 
+        <div class = "term" id = "photonDiv">
+            <div class = "inputLabel">Photons</div>
+            <div class = "eqInputDiv" ><input type = "text" class = "eqInput" id = "photonInput" param = "photons"></div> 
         </div> 
 
         <div class = "operator">&times;</div>
         
-        <div class = "term">
-            Quantum Efficiency, e<sup>-</sup>/Photon
+        <div class = "term" id = "qeDiv">
+            <div class = "inputLabel">QE, e<sup>-</sup>/Photon</div>
             <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "qeInput" param = "qe"></div> 
         </div> 
         
         <div class = "operator">&times;</div>
         
-        <div class = "term">
-            Gain, Count/e<sup>-</sup>
+        <div class = "term" id = "gainDiv">
+            <div class = "inputLabel">ADC Gain, Count/e<sup>-</sup></div>
             <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "gainInput" param = "gain"></div> 
+        </div> 
+
+        <div class = "operator">&times;</div>
+        
+        <div class = "term" id = "emGainDiv">
+            <div class = "inputLabel">EM Gain</div>
+            <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "emGainInput" param = "emGain"></div> 
         </div> 
 
         <div class = "operator">)</div>
         
         <div class = "operator">+</div>
         
-            <div class = "term">
-                Offset, Counts
+            <div class = "term" id = "offsetDiv">
+                <div class = "inputLabel">Offset, Counts</div>
                 <div class = "eqInputDiv"><input type = "text" class = "eqInput" id = "offsetInput" param = "offset"></div> 
             </div> 
 
